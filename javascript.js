@@ -21,16 +21,18 @@ function getComputerChoice(){
 }
 //Declare function for player's choice
 function getHumanChoice(){
-    choice = prompt("What weapon do you choose? Enter 1, 2, or 3", "");
+//Prompt user for option and store answer in variable
+    let choice = prompt("What weapon do you choose? Enter 1, 2, or 3", "");
     
-    if (choice = 1){
-        return ("rock");
-    }else if (choice = 2){
-        return ("paper");
-    }else{
-        return ("scissors");
-    }
-
-}
+   if (choice == 1){
+    return ("rock");
+   }else if (choice == 2){
+    return ("paper");
+   }else if (choice == 3){
+    return ("scissors");
+   }else{
+    return ("invalid option");
+   }
+   }
 
 
