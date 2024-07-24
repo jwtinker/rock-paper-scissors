@@ -22,17 +22,51 @@ function getComputerChoice(){
 //Declare function for player's choice
 function getHumanChoice(){
 //Prompt user for option and store answer in variable
-    let choice = prompt("What weapon do you choose? Enter 1, 2, or 3", "");
-    
-   if (choice == 1){
+    let promptChoice = prompt("What weapon do you choose? Enter rock, paper, or scissors", "");
+    let humanChoice = promptChoice.toLowerCase();
+  //Select choice based on stored data in variable  
+   if (humanChoice == "rock"){
     return ("rock");
-   }else if (choice == 2){
+   }else if (humanChoice == "paper"){ 
     return ("paper");
-   }else if (choice == 3){
+   }else if (humanChoice == "scissors"){
     return ("scissors");
    }else{
     return ("invalid option");
    }
    }
 
-
+let humanScore = 0;
+let computerScore = 0;
+//Create function for game round
+function playRound(humanChoice, computerChoice){
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+    
+    if (humanChoice == "rock" && computerChoice == "scissors"){ 
+        console.log("You win! Rock beats Scissors.");
+        humanScore = (humanScore + 1);
+    } else if (humanChoice == "rock" && computerChoice == "paper"){
+        console.log("You lose! Paper beats Rock.");
+        computerScore = (computerScore + 1);
+    } else if (humanChoice == "paper" && computerChoice == "rock"){
+        console.log("You win! Paper beats Rock.");
+        humanScore = (humanScore + 1);
+    } else if (humanChoice == "paper" && computerChoice == "scissors"){
+        console.log("You lose! Scissors beats Paper.");
+        computerScore = (computerScore + 1);
+    } else if (humanChoice == "scissors" && computerChoice == "paper"){
+        console.log("You win! Scissors beats Paper.");
+        humanScore = (humanScore + 1);
+    } else if (humanChoice == "scissors" && computerChoice == "rock"){
+        console.log("You lose! Rock beats Scissors.");
+        computerScore = (computerScore + 1);
+    } else if (humanChoice == computerChoice){
+        console.log("You tied! Try Again.")
+    } else{
+        console.log("Invalid option. Try Again");
+    }
+} 
+// Rock beats Scissors
+// Paper beats Rock
+// Scissors beats Paper
